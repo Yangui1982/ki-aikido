@@ -1,2 +1,226 @@
 // Import page-specific CSS files here.
-@import "home";
+
+.content {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  margin-left: 20%;
+  margin-right: 20%;
+  background-color: whitesmoke;
+  border-radius: 15px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.content h1{
+ text-align: center;
+ margin: 0;
+}
+
+@media(max-width: 1076px) {
+  .content {
+    margin-top: 30px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 10px;
+    width: auto;
+  }
+}
+
+@media(max-width: 790px) {
+  .content {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+  }
+}
+
+@media(max-width: 280px) {
+  .content {
+    margin-top: 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+@media(max-width: 320px) {
+  .card img {
+    width: 290px;
+  }
+  .card {
+    width: 300px;
+  }
+}
+
+.card h2 {
+  font-family: Courier;
+  text-align: center;
+  color: black;
+  font-weight: lighter;
+  font-size: 30px;
+}
+
+.container {
+  display: grid;
+  padding: 16px;
+  justify-content: space-between;
+  margin-top: 40px;
+  width: 100%;
+}
+
+@media(max-width: 790px) {
+  .container {
+    padding: 0px;
+    margin-top: 20px;
+  }
+}
+
+.carousel {
+  display: flex;
+}
+
+.cards {
+  width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  flex-grow: 1;
+}
+
+.card{
+  display: inline;
+  width: auto;
+  text-align: center;
+  font-weight: lighter;
+}
+
+.card p{
+  color: green;
+  font-size: 25px;
+  font-family: Helvetica;
+  text-align: center;
+}
+
+.description{
+  margin-top : 300px;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.news {
+  font-size: 14px;
+  font-family: Helvetica;
+  text-align: center;
+}
+
+.news h2 {
+  text-align: center;
+}
+
+.news ul {
+  padding-left: 20px;
+}
+
+@media(max-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 990px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.img_card {
+  background-size: cover;
+  background-position: bottom;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+}
+
+.log {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+  background-color: whitesmoke;
+  color: whitesmoke;
+  width: 5px;
+}
+
+.log a{
+  color: whitesmoke;
+  font-size: 20px;
+}
+ ul {
+  list-style: none;
+  padding-right: 20px;
+ }
+
+ .text {
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+.card-product2 {
+  margin-left: 30px;
+  margin-right: 30px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.card-product2 img {
+  height: 100%;
+  width: 230px;
+  object-fit: cover;
+}
+
+.card-product2 p {
+  font-size: 14px;
+  font-family: Helvetica;
+  line-height: 1.4;
+  margin-bottom: 0;
+  margin-top: 8px;
+  text-align: justify;
+}
+
+.card-product2 .card-product-infos {
+  padding: 16px;
+}
+
+@media(max-width: 768px) {
+  .card-product2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.but {
+  margin-bottom: 35px;
+}
+
+.but p{
+  margin-left: 30px;
+  margin-right: 30px;
+  font-size: 14px;
+  font-family: Helvetica;
+  line-height: 1.4;
+  text-align: justify;
+}
+
+@media(max-width: 280px) {
+  .card-product2 {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .card img {
+    width: 240px;
+  }
+  .card {
+    width: 270px;
+  }
+}

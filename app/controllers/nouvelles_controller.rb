@@ -32,7 +32,7 @@ class NouvellesController < ApplicationController
 
   def destroy
     @nouvelle.destroy
-    redirect_to root_path
+    redirect_to root_path, status: :see_other
     authorize @nouvelle
   end
 
@@ -43,6 +43,6 @@ class NouvellesController < ApplicationController
   end
 
   def nouvelle_params
-    params.require(:nouvelle).permit(:comment, :user, :content)
+    params.require(:nouvelle).permit(:comment, :user)
   end
 end

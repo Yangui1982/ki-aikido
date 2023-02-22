@@ -1,12 +1,173 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: whitesmoke;
+  color: grey;
+  margin-bottom: 0px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  width: 100%;
+ }
+
+.navbar p{
+  display: none;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar a {
+  text-decoration: none;
+  color: grey;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+ .nav-links a {
+  color: grey;
+  text-decoration: none;
+ }
+
+ ul {
+  list-style: none;
+  align-self: center;
+  text-align: center;
 }
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 550px;
+}
+
+.logo img {
+  width: 80px;
+}
+
+.logo h1 {
+  font-size: 36px;
+}
+
+.onglets {
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu {
+display: flex;
+gap: 1em;
+font-size: 18px;
+}
+
+.menu li {
+padding: 5px 14px;
+}
+
+.nav-links a:hover {
+color: black;
+text-decoration: none;
+}
+
+.services {
+position: relative;
+}
+.dropdown {
+background-color: whitesmoke;
+padding: 1em 0;
+position: absolute;
+display: none;
+border-radius: 8px;
+top: 35px;
+}
+.dropdown li + li {
+margin-top: 10px;
+}
+.dropdown li {
+padding: 0.5em 1em;
+width: 8em;
+text-align: center;
+}
+.dropdown li:hover {
+background-color: white;
+}
+.nav-links a:hover {
+color: black;
+text-decoration: none;
+}
+
+input[type=checkbox]{
+display: none;
+}
+.hamburger {
+display: none;
+font-size: 30px;
+user-select: none;
+margin-top: 10px;
+}
+
+@media (max-width: 1076px) {
+  .navbar-items {
+    display: flex;
+    justify-content: space-between;
+   }
+  .menu {
+    display:none;
+    position: absolute;
+    background-color: whitesmoke;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 16px 0;
+  }
+  .menu li:hover {
+    display: inline-block;
+    background-color: white;
+    transition: 0.3s ease;
+  }
+  .menu li + li {
+    margin-top: 12px;
+  }
+  input[type=checkbox]:checked ~ .menu{
+    display: block;
+  }
+  .hamburger {
+    margin-bottom: 0;
+    display: block;
+    text-align: center;
+  }
+  .navbar p{
+    display: contents;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .logo {
+    width: 200px;
+    justify-content: left;
+  }
+
+  .logo h1{
+    font-size: 20px;
+  }
+}
+
+@media(max-width: 280px) {
+  .logo {
+    width: 200px;
+    justify-content: left;
+    font-size: 15px;
+  }
+  .logo img{
+    width: 70px;
+  }
+
+  .nav-links {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .navbar-items {
+    display: flex;
+   }
+}
+

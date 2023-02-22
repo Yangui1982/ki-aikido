@@ -1,0 +1,99 @@
+<div class="content">
+  <div class="log">
+    <div class="login">
+      <%= link_to "login", new_user_session_path %>
+    </div>
+    <div class='logout'>
+      <%= link_to destroy_user_session_path, method: :delete, class: "out-btn" do%>
+      <i class="fa-solid fa-circle-xmark"></i>
+      <% end %>
+    </div>
+  </div>
+
+  <h1>Accueil</h1>
+  <br>
+  <div class="but">
+    <p>
+      Ki No Kenkyukaï Musubi, école issue du Ki No Kenkyukaï International fondée par le Doshu Kenjiro
+      Yoshigasaki, selon l'enseignement du Shinshin Toïtsu Aïkido fondé par Maître Koïchi Toheï
+      (Aïkido avec coordination de l'esprit et du corps), plus simplement nommé : Ki Aïkido.
+    </p>
+  </div>
+  <div class="container">
+    <div class="carousel">
+      <div class="carousel-cell">
+        <%= cl_image_tag("100_0815_climau", version:1676885340, class: "img_card", alt: "Respiration") %>
+        <h2>Respiration</h2>
+        <p>La respiration est un élément <strong>très important</strong> dans la pratique de l'Aïkido</p>
+      </div>
+
+      <div class="carousel-cell">
+        <%= cl_image_tag("100_0797_smhzar", version:1676885339, class: "img_card", alt: "Relaxation") %>
+        <h2>Relaxation</h2>
+        <p>Un corps relaxé est plus <strong> efficace et fluide</strong> dans ses mouvements</p>
+      </div>
+
+      <div class="carousel-cell">
+        <%= cl_image_tag("100_0554_k30agl", version:1676885340, class: "img_card", alt: "Coordination") %>
+        <h2>Coordination</h2>
+        <p>La coordination du corps et de l'esprit est  <strong>essentielle</strong> dans la pratique de l'Aïkido</p>
+      </div>
+
+      <div class="carousel-cell">
+        <%= cl_image_tag("100_0569_nzskk3", version:1676885340, class: "img_card", alt: "Unification") %>
+        <h2>Unification</h2>
+        <p><strong>L'esprit</strong> bouge le corps</p>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="news">
+    <h2>Actualités</h2>
+    <br>
+    <ul>
+      <% @nouvelles.each do |nouvelle| %>
+      <li><%= nouvelle.created_at.strftime("%d-%m-%Y")  %>
+          <%= ': ' %>
+          <%= nouvelle.content %>
+          <% if policy(nouvelle).destroy? %>
+            <%= link_to nouvelle_path(nouvelle), class: 'trash',
+              method: :delete,
+              data: { confirm: "Are you sure?" } do%>
+              <i class="fa-regular fa-trash-can"></i>
+              <% end %>
+          <% end %>
+      </li>
+      <br>
+      <% end %>
+      <li>Ouverture des Dojos de Ki Aïkido à Castelnaudary le 15/09/2022.
+      Les cours auront lieu :
+      Le lundi soir, de 19h30 à 21h45, Au Gymnase Pierre de Coubertin, 4 Rue Jacques Anquetil, 11400 Castelnaudary.
+      Le jeudi soir, de 20h00 à 22h00, au Complexe Sportif Le Millénaire, Rue Anatole France, 11400 Castelnaudary.
+      Les deux premiers cours sont gratuits.</li>
+      <br>
+    </ul>
+    <% if user_session %>
+      <%= link_to new_nouvelle_path, class: 'add' do%>
+        <i class="fa-solid fa-plus"></i>
+      <% end %>
+    <% end %>
+    <br>
+    <div class="card-product2">
+      <%= cl_image_tag("ki_yyjes9", version: 1676885338, width: 189, class:"img_card", alt: "Aïkido") %>
+      <div class="card-product-infos">
+        <p>Shinshin Toïtsu Aïkido avec coordination de l'esprit et du corps, plus simplement nommé : Ki Aïkido (Ecole fondée par Maître Koïchi Toheï)</p>
+      </div>
+    </div>
+    <br>
+  </div>
+  <div class="but">
+    <p>Promouvoir la pratique du Ki-Aïkido selon l'enseignement du Maître Kenjiro Yoshigasaki, élève direct du Maître fondateur du Ki-Aïkido : Koïchi Toheï.</p>
+    <br>
+    <p>L'association considère le Ki-Aïkido comme un élément important de l'éducation, de la culture, de la santé publique, de l'intégration et de la participation à la vie sociale.</p>
+    <br>
+    <p>Elle s'interdit toutes discriminations basées notamment sur la race, le sexe, les opinions politiques, philosophiques ou religieuses.</p>
+    <br>
+    <p>Elle s'engage à respecter les droits de l'homme et la liberté d'opinion, et elle s'engage à respecter les règles d'hygiène et de sécurité applicables aux disciplines pratiquées en son sein.</p>
+  </div>
+  <br>
+</div>

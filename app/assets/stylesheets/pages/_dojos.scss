@@ -1,0 +1,20 @@
+.link{
+  text-align: center;
+}
+.link h2{
+  font-size: 16px;
+}
+.link h3{
+  font-size: 14px;
+  font-weight: bold;
+}
+.link p{
+  font-size: 12px;
+}
+
+.clubs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  flex-grow: 1;
+}
