@@ -6,6 +6,7 @@
   margin-bottom: 0px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   width: 100%;
+  z-index: 1000;
  }
 
 .navbar p{
@@ -109,6 +110,7 @@ margin-top: 10px;
 
 @media (max-width: 1076px) {
   .navbar-items {
+    width: 100%;
     display: flex;
     justify-content: space-between;
    }
@@ -170,4 +172,3 @@ margin-top: 10px;
     display: flex;
    }
 }
-

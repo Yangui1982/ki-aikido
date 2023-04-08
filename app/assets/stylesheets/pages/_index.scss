@@ -1,13 +1,11 @@
 // Import page-specific CSS files here.
-
+.embale {
+  flex: 1;
+}
 .content {
-  margin-top: 40px;
   margin-bottom: 10px;
   margin-left: 20%;
   margin-right: 20%;
-  background-color: whitesmoke;
-  border-radius: 15px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .content h1{
@@ -15,41 +13,8 @@
  margin: 0;
 }
 
-@media(max-width: 1076px) {
-  .content {
-    margin-top: 30px;
-    margin-left: 10%;
-    margin-right: 10%;
-    border-radius: 10px;
-    width: auto;
-  }
-}
-
-@media(max-width: 790px) {
-  .content {
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    border-radius: 5px;
-  }
-}
-
-@media(max-width: 280px) {
-  .content {
-    margin-top: 10px;
-    border-radius: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-}
-
-@media(max-width: 320px) {
-  .card img {
-    width: 290px;
-  }
-  .card {
-    width: 300px;
-  }
+.entete {
+  width: 100%
 }
 
 .card h2 {
@@ -60,46 +25,28 @@
   font-size: 30px;
 }
 
-.container {
-  display: grid;
-  padding: 16px;
-  justify-content: space-between;
-  margin-top: 40px;
-  width: 100%;
+.carrousel {
+  padding-top: 30px;
 }
 
-@media(max-width: 790px) {
-  .container {
-    padding: 0px;
-    margin-top: 20px;
-  }
-}
-
-.carousel {
+.carousel-item {
   display: flex;
-}
-
-.cards {
+  background-size: cover;
+  background-position: center;
   width: 100%;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 16px;
-  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.card{
-  display: inline;
-  width: auto;
+.resume {
+  padding-top: 50vh;
+  padding-bottom: 10vh;
   text-align: center;
-  font-weight: lighter;
-}
-
-.card p{
-  color: green;
-  font-size: 25px;
-  font-family: Helvetica;
-  text-align: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 .description{
@@ -122,19 +69,8 @@
   padding-left: 20px;
 }
 
-@media(max-width: 992px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media(max-width: 990px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
 .img_card {
+  width: 100%;
   background-size: cover;
   background-position: bottom;
   border-radius: 8px;
@@ -193,12 +129,6 @@
   padding: 16px;
 }
 
-@media(max-width: 768px) {
-  .card-product2 {
-    grid-template-columns: 1fr;
-  }
-}
-
 .but {
   margin-bottom: 35px;
 }
@@ -212,15 +142,54 @@
   text-align: justify;
 }
 
-@media(max-width: 280px) {
-  .card-product2 {
+@media(max-width: 1076px) {
+  .content {
+    margin-top: 30px;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: auto;
+  }
+}
+
+@media(max-width: 790px) {
+  .content {
+    margin-top: 10px;
     margin-left: 10px;
     margin-right: 10px;
   }
-  .card img {
-    width: 240px;
+}
+
+@media(max-width: 768px) {
+  .card-product2 {
+    grid-template-columns: 1fr;
   }
-  .card {
-    width: 270px;
+}
+
+@media(max-width: 425px) {
+  .resume {
+    padding-top: 40vh !important;
+    font-size: 10px !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+@media(max-width: 320px) {
+  .resume h2 {
+    font-size: 12px !important;
+  }
+  .carousel-item {
+    height : 49vh;
+  }
+}
+
+@media(max-width: 280px) {
+  .content {
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .card-product2 {
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
