@@ -1,5 +1,15 @@
 <nav class="navbar">
  <div class="navbar-items">
+  <div class="log">
+      <div class="login">
+        <%= link_to "login", new_user_session_path %>
+      </div>
+      <div class='logout'>
+        <%= button_to destroy_user_session_path, method: :delete, class: "out-btn" do%>
+          <i class="fa-solid fa-circle-xmark"></i>
+        <% end %>
+      </div>
+    </div>
   <div class="title">
     <!-- LOGO -->
     <%= link_to root_path do  %>

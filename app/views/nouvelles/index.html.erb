@@ -1,17 +1,5 @@
 <div class="embale">
-  <div class="log">
-    <div class="login">
-      <%= link_to "login", new_user_session_path %>
-    </div>
-    <div class='logout'>
-      <%= link_to destroy_user_session_path, method: :delete, class: "out-btn" do%>
-      <i class="fa-solid fa-circle-xmark"></i>
-      <% end %>
-    </div>
-  </div>
-  <div class="content">
-    <div class="entete">
-      <div class="carrousel">
+  <div class="carrousel">
         <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path "100_0815_ofcvav", version:1676821409, class: "img_card d-block w-100", alt: "Respiration" %>')">
@@ -41,7 +29,7 @@
           </div>
         </div>
       </div>
-    </div>
+  <div class="content">
     <br>
     <h1>Accueil</h1>
     <br>

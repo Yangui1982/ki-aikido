@@ -7,14 +7,18 @@
   margin-left: 20%;
   margin-right: 20%;
 }
+ button {
+  border: none;
+  color: whitesmoke;
+  background-color: whitesmoke;
+ }
 
+.logout{
+  color: whitesmoke;
+}
 .content h1{
  text-align: center;
  margin: 0;
-}
-
-.entete {
-  width: 100%
 }
 
 .card h2 {
@@ -26,7 +30,7 @@
 }
 
 .carrousel {
-  padding-top: 30px;
+  width: 100%;
 }
 
 .carousel-item {
