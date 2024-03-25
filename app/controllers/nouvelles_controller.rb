@@ -43,6 +43,6 @@ class NouvellesController < ApplicationController
   end
 
   def nouvelle_params
-    params.require(:nouvelle).permit(:comment, :user)
+    params.require(:nouvelle).permit(:content, :user)
   end
 end

@@ -2,5 +2,5 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
-
-console.log("Hello from app/javascript/application.js")
+import "stylesheets/trix"
+import "@rails/actiontext"

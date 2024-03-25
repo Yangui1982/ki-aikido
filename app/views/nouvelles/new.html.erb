@@ -1,12 +1,13 @@
-<br>
-<br>
-<br>
-<%= form_with model: @nouvelle do |f| %>
-  <div class="field">
-    <%= f.label :content %>
-    <%= f.rich_text_area :content, type: "text" %>
+<div class="formulaire">
+  <div class="form">
+    <%= form_with model: @nouvelle do |f| %>
+      <div class="field">
+        <%= f.label :content, 'Contenu' %>
+        <%= f.rich_text_area :content, type: "text" %>
+      </div>
+      <div class="form-actions">
+        <%= f.submit 'Save News', class:'bnt btn-primary' %>
+      </div>
+    <% end %>
   </div>
-  <div class="form-actions">
-    <%= f.submit 'Save News', class:'bnt btn-primary' %>
-  </div>
-<% end %>
+</div>
