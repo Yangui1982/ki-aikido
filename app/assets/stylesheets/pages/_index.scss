@@ -3,18 +3,19 @@
   flex: 1;
 }
 .content {
-  margin-bottom: 10px;
   margin-left: 20%;
   margin-right: 20%;
+  background-color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
  button {
   border: none;
-  color: whitesmoke;
+  color: black;
   background-color: whitesmoke;
  }
 
 .logout{
-  color: whitesmoke;
+  color: black;
 }
 .content h1{
  text-align: center;
@@ -62,7 +63,6 @@
 .news {
   font-size: 14px;
   font-family: Helvetica;
-  text-align: center;
 }
 
 .news h2 {
@@ -81,15 +81,6 @@
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
 }
 
-.log {
-  margin-left: 20px;
-  display: flex;
-  flex-direction: row;
-  background-color: whitesmoke;
-  color: whitesmoke;
-  width: 5px;
-}
-
 .log a{
   color: whitesmoke;
   font-size: 20px;
@@ -97,6 +88,7 @@
  ul {
   list-style: none;
   padding-right: 20px;
+  text-align: justify !important;
  }
 
  .text {
@@ -104,12 +96,20 @@
   padding-right: 35px;
 }
 
+.add {
+  display: flex;
+  justify-content: center;
+}
+.add a {
+  text-decoration: none;
+}
+
 .card-product2 {
   margin-left: 30px;
   margin-right: 30px;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   justify-items: center;
   align-items: center;
 }
@@ -130,7 +130,7 @@
 }
 
 .card-product2 .card-product-infos {
-  padding: 16px;
+  padding: 12px;
 }
 
 .but {

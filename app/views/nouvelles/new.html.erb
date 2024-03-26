@@ -1,13 +1,17 @@
-<div class="formulaire">
-  <div class="form">
-    <%= form_with model: @nouvelle do |f| %>
-      <div class="field">
-        <%= f.label :content, 'Contenu' %>
-        <%= f.rich_text_area :content, type: "text" %>
-      </div>
-      <div class="form-actions">
-        <%= f.submit 'Save News', class:'bnt btn-primary' %>
-      </div>
-    <% end %>
-  </div>
+<div class="contenu">
+  <h3>Ajoutez votre "news" dans le champs ci-dessous</h3>
+  <br>
+  <br>
+  <br>
+  <%= simple_form_for(@nouvelle) do |f| %>
+    <div class="field">
+      <%= f.label :content, 'Contenu' %>
+      <%= f.rich_text_area :content, type: "text" %>
+    </div>
+    <br>
+    <br>
+    <div class="form-actions">
+      <%= f.submit 'Sauvegarder la News', class:'bnt btn-primary' %>
+    </div>
+  <% end %>
 </div>
