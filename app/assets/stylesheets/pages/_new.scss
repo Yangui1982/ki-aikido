@@ -1,11 +1,64 @@
-.formulaire {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
+.contenu{
+  padding-top: 45px;
+  margin-left: 20%;
+  margin-right: 20%;
+  min-height: 100vh;
+  background-color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
-.form{
-  font-size: large;
-  margin-top: 50px;
-  max-width: 1000px;
+.contenu h1 {
+  text-align: center;
+}
+.contenu h3 {
+  text-align: center;
+}
+
+.field {
+  font-size: 14px;
+  font-family: Helvetica;
+  line-height: 1.4;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+}
+
+.form-actions {
+  font-size: 14px;
+  font-family: Helvetica;
+  line-height: 1.4;
+  margin-left: 10%;
+}
+
+@media(max-width: 1076px) {
+  .contenu {
+    padding-top: 35px;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  .field {
+    margin-left: 8%;
+    margin-right: 8%;
+    width: 84%;
+  }
+  .form-actions {
+    margin-left: 8%;
+  }
+}
+
+@media(max-width: 768px) {
+  .contenu {
+    padding-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 72.3vh;
+  }
+  .field {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+  }
+  .form-actions {
+    margin-left: 5%;
+  }
 }
