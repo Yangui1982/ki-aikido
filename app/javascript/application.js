@@ -2,5 +2,5 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
-import "stylesheets/trix"
+// import "stylesheets/trix"
 import "@rails/actiontext"
