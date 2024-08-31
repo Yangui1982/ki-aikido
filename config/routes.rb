@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   get "media", to: "pages#media"
   get "enseignement", to: "pages#enseignement"
   get "bibliographie", to: "pages#bibliographie"
-  get "articles", to: "pages#articles"
   get "dojos", to: "pages#dojos"
+
+  resources :users do
+    resources :events
+  end
 end

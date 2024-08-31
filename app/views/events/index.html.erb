@@ -1,0 +1,44 @@
+<div class="content3">
+  <h1>Evènements</h1>
+  <% @events.each do |event| %>
+    <h2><%= event.title %></h2>
+    <div class="thumbnails">
+      <% event.photos.each do |photo| %>
+        <%= cl_image_tag(photo.image.path, class: 'thumbnail', data: { toggle: 'modal', target: "#carousel-#{event.id}" }) %>
+      <% end %>
+    </div>
+
+    <!-- Carousel -->
+    <div id="carousel-<%= event.id %>" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title"><%= event.title %></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div id="carouselExampleControls-<%= event.id %>" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <% event.photos.each_with_index do |photo, index| %>
+                  <div class="carousel-item <%= 'active' if index == 0 %>">
+                    <%= cl_image_tag(photo.image.path) %>
+                  </div>
+                <% end %>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleControls-<%= event.id %>" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleControls-<%= event.id %>" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
