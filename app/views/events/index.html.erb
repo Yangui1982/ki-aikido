@@ -1,44 +1,86 @@
 <div class="content3">
   <h1>Evènements</h1>
-  <% @events.each do |event| %>
-    <h2><%= event.title %></h2>
-    <div class="thumbnails">
-      <% event.photos.each do |photo| %>
-        <%= cl_image_tag(photo.image.path, class: 'thumbnail', data: { toggle: 'modal', target: "#carousel-#{event.id}" }) %>
+    <% if user_session %>
+      <%= link_to new_event_path, class: 'add' do%>
+        <i class="fa-solid fa-plus"></i>
       <% end %>
-    </div>
-
-    <!-- Carousel -->
-    <div id="carousel-<%= event.id %>" class="modal fade" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title"><%= event.title %></h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div id="carouselExampleControls-<%= event.id %>" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner">
-                <% event.photos.each_with_index do |photo, index| %>
-                  <div class="carousel-item <%= 'active' if index == 0 %>">
-                    <%= cl_image_tag(photo.image.path) %>
-                  </div>
-                <% end %>
+    <% end %>
+  <br><br>
+  <div class="events">
+    <% @events.each do |event| %>
+      <div class="event">
+      <h2><%= event.title %></h2>
+      <% if policy(event).destroy? %>
+        <%= button_to event_path(event), class: 'trash',
+          method: :delete,
+          data: { confirm: "Are you sure?" } do%>
+          <h2><i class="fa-regular fa-trash-can"></i></h2>
+          <% end %>
+      <% end %>
+      </div>
+      <br><br>
+      <div class="thumbnails">
+        <% event.photos.each do |photo| %>
+          <% if photo.image.present?%>
+            <%= cl_image_tag(photo.image.url, class: 'thumbnail', data: { 'bs-toggle': 'modal', 'bs-target': "#carousel-#{event.id}" }) %>
+          <% end %>
+        <% end %>
+      </div>
+      <br><br>
+      <!-- Carousel -->
+      <div id="carousel-<%= event.id %>" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div id="eventCarousel-<%= event.id %>" class="carousel slide" data-bs-interval="false">
+                <div class="carousel-inner">
+                  <% event.photos.each_with_index do |photo, index| %>
+                    <div class="carousel-item <%= 'active' if index == 0 %>">
+                      <%= cl_image_tag(photo.image.url, class: 'd-block w-100') %>
+                    </div>
+                  <% end %>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-#{event.id}" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel-#{event.id}" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
               </div>
-              <a class="carousel-control-prev" href="#carouselExampleControls-<%= event.id %>" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselExampleControls-<%= event.id %>" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  var thumbnails = document.querySelectorAll('.thumbnail');
+
+  thumbnails.forEach(function(thumbnail) {
+    thumbnail.addEventListener('click', function(event) {
+      var target = event.currentTarget.dataset.bsTarget;
+      var carousel = document.querySelector(target + ' .carousel-inner');
+      var items = carousel.querySelectorAll('.carousel-item');
+      var index = parseInt(event.currentTarget.dataset.photoIndex, 10);
+
+      // Retirer la classe 'active' de tous les éléments
+      items.forEach(function(item) {
+        item.classList.remove('active');
+      });
+
+      // Ajouter la classe 'active' à l'élément cliqué
+      items[index].classList.add('active');
+    });
+  });
+});
+</script>

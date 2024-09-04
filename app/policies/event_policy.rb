@@ -5,7 +5,7 @@ class EventPolicy < ApplicationPolicy
     end
   end
 
-  def index?
+  def create?
     true
   end
 
@@ -13,8 +13,8 @@ class EventPolicy < ApplicationPolicy
     true
   end
 
-  def create?
-    record.user == user
+  def edit?
+    true
   end
 
   def update?
