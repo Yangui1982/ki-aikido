@@ -1,3 +1,6 @@
+require 'cloudinary'
+require 'cloudinary/uploader'
+require 'cloudinary/utils'
 require 'carrierwave/orm/activerecord'
 
 CarrierWave.configure do |config|
@@ -6,13 +9,13 @@ CarrierWave.configure do |config|
     cloud_name: ENV['CLOUDINARY_CLOUD_NAME'],
     api_key:    ENV['CLOUDINARY_API_KEY'],
     api_secret: ENV['CLOUDINARY_API_SECRET'],
-    secure: true
+    secure:     true
   }
 
-  # Dossier par défaut pour le stockage des fichiers
-  config.cache_dir = "#{Rails.root}/tmp/uploads" # Pour éviter les problèmes sur Heroku avec le filesystem
-  config.asset_host = ENV['CLOUDINARY_URL'] if ENV['CLOUDINARY_URL']
+  # Utilisez un dossier temporaire spécifique à Heroku
+  config.cache_dir = "#{Rails.root}/tmp/uploads" # Pour éviter les problèmes avec le système de fichiers éphémère de Heroku
 end
+
 
 
 # CarrierWave.configure do |config|
