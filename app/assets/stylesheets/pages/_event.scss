@@ -1,0 +1,100 @@
+.events {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.event{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.thumbnails {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.thumbnail {
+  max-height: 220px;
+  width: 220px;
+  margin: 5px;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+}
+
+.modal {
+  --bs-modal-width: 80% !important;
+}
+
+.modal-dialog {
+  max-width: none;
+  width: auto;
+  display: inline-block;
+}
+
+.modal-content {
+  display: inline-block;
+  text-align: center;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.modal-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.carousel-item img {
+  width: auto;
+  max-height: 60vh;
+  justify-self: center;
+}
+
+.carousel-item {
+  display: none;
+  justify-content: center;
+  transition: none !important;
+}
+
+.carousel-item.active {
+  display: grid;
+}
+
+.carousel-inner {
+  transition: none !important;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  transition: none !important;
+}
+
+@media(max-width: 476px) {
+  .thumbnail {
+    max-height: 190px;
+    width: 190px
+  }
+}
+
+@media(max-width: 412px) {
+  .thumbnail {
+    max-height: 160px;
+    width: 160px
+
+  }
+}
+
+@media(max-width: 350px) {
+  .thumbnail {
+    max-height: 140px;
+    width: 140px
+
+  }
+}

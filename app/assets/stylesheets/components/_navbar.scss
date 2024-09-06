@@ -1,6 +1,8 @@
 .navbar {
-  position: sticky;
+  position: sticky !important;
   top: 0;
+  display: flex !important;
+  justify-content: center !important;
   background-color: whitesmoke;
   color: grey;
   margin-bottom: 0px;
@@ -30,6 +32,7 @@
 }
 
 .title {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,8 +61,7 @@
 
 .menu {
 display: flex;
-gap: 1em;
-font-size: 18px;
+font-size: 22px;
 }
 
 .menu li {
