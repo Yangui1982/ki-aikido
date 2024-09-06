@@ -20,7 +20,10 @@
 
 .thumbnail {
   max-height: 220px;
+  width: 220px;
   margin: 5px;
+  object-fit: cover;
+  display: block;
   cursor: pointer;
 }
 
@@ -76,17 +79,22 @@
 @media(max-width: 476px) {
   .thumbnail {
     max-height: 190px;
+    width: 190px
   }
 }
 
 @media(max-width: 412px) {
   .thumbnail {
     max-height: 160px;
+    width: 160px
+
   }
 }
 
 @media(max-width: 350px) {
   .thumbnail {
     max-height: 140px;
+    width: 140px
+
   }
 }
