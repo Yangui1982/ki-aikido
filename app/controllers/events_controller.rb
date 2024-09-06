@@ -5,8 +5,6 @@ class EventsController < ApplicationController
 
   def index
     @events = policy_scope(Event).order(created_at: :desc)
-    # @event = Event.new
-    # authorize @event
   end
 
   def new
@@ -59,6 +57,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:title, :user, photos_attributes: [:id, :image, :_destroy])
+    params.require(:event).permit(:title, :user, images: [], photos_attributes: [:id, :image, :_destroy])
   end
 end
