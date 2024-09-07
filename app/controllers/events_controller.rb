@@ -5,6 +5,8 @@ class EventsController < ApplicationController
 
   def index
     @events = policy_scope(Event).order(created_at: :desc)
+    # @event = Event.new
+    # authorize @event
   end
 
   def new
@@ -16,11 +18,8 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user = current_user
-
-    logger.debug params.inspect
-
     if @event.save
-      save_photos if params[:event][:photos_attributes].present?
+      save_photos if params[:event][:images].present?
       redirect_to events_path, notice: 'Événement créé avec succès.'
     else
       render :new
@@ -33,7 +32,7 @@ class EventsController < ApplicationController
 
   def update
     if @event.update(event_params)
-      save_photos if params[:event][:photos_attributes].present?
+      save_photos if params[:event][:images].present?
       redirect_to events_path, notice: 'Événement mis à jour avec succès.'
     else
       render :edit
@@ -50,20 +49,10 @@ class EventsController < ApplicationController
   private
 
   def save_photos
-    params[:event][:photos_attributes].each do |_, photo_attributes|
-      next if photo_attributes[:image].blank?
-
-      if photo_attributes[:image].is_a?(Array)
-        photo_attributes[:image].each do |image|
-          @event.photos.create(image: image) if image.present?
-        end
-      else
-        @event.photos.create(image: photo_attributes[:image]) if photo_attributes[:image].present?
-      end
+    params[:event][:images].each do |image|
+      @event.photos.create(image: image) if image.present?
     end
   end
-
-
 
   def set_event
     @event = Event.find(params[:id])

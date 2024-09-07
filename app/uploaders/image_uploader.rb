@@ -8,7 +8,7 @@ class ImageUploader < CarrierWave::Uploader::Base
     process resize_to_fit: [150, 150]
   end
 
-  def public_id
-    return "events/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
-  end
+  # def public_id
+  #   return "events/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  # end
 end
