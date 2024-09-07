@@ -19,7 +19,6 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user = current_user
     if @event.save
-      save_photos if params[:event][:images].present?
       redirect_to events_path, notice: 'Événement créé avec succès.'
     else
       render :new
@@ -32,7 +31,6 @@ class EventsController < ApplicationController
 
   def update
     if @event.update(event_params)
-      save_photos if params[:event][:images].present?
       redirect_to events_path, notice: 'Événement mis à jour avec succès.'
     else
       render :edit
@@ -48,17 +46,11 @@ class EventsController < ApplicationController
 
   private
 
-  def save_photos
-    params[:event][:images].each do |image|
-      @event.photos.create(image: image) if image.present?
-    end
-  end
-
   def set_event
     @event = Event.find(params[:id])
   end
 
   def event_params
-    params.require(:event).permit(:title, :user_id, photos_attributes: [:id, :image, :_destroy])
+    params.require(:event).permit(:title, photos: [] )
   end
 end
