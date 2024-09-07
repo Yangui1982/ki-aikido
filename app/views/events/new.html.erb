@@ -6,7 +6,7 @@
       <%= f.input :title, label: 'Titre' %>
 
       <%= f.simple_fields_for :photos do |photo_form| %>
-        <%= photo_form.input :image, as: :file, input_html: { multiple: true, name: "event[images][]" }, label: 'Ajouter des photos' %>
+        <%= photo_form.input :image, as: :file, input_html: { multiple: true }, label: 'Ajouter des photos' %>
       <% end %>
     </div>
 
