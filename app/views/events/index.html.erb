@@ -42,7 +42,7 @@
                   <% event.photos.each_with_index do |photo, index| %>
                     <div class="carousel-item <%= 'active' if index == 0 %>">
                       <% if photo.image.present? %>
-                        <%= cl_image_tag(photo.image.url, class: 'd-block').gsub(%r{https://res\.cloudinary\.com/dbzcbmk3a/image/upload/v1/production/}, '') %>
+                        <%= cl_image_tag(photo.image.url.gsub(%r{https://res\.cloudinary\.com/dbzcbmk3a/image/upload/v1/production/}, ''), class: 'd-block') %>
                       <% else %>
                         <p>Pas d'image disponible</p>
                       <% end %>
